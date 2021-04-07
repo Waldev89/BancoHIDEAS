@@ -1,0 +1,25 @@
+<section id="menu" class="bg-ligth p-4">
+    <nav class="navbar navbar-expand-sm bg-light navbar-dark">
+      <a class="navbar-brand" href="#">
+        <img
+          src="assets/icons/home-outline.svg"
+          alt="Home"
+          style="width: 40px; background-color: rgb(195, 195, 199)"
+        />
+      </a>
+      <h5 class="text">Categorias...</h5>
+    </nav>
+  </section>
+  <form class="p-3" (ngSubmit)="registrar()">
+    <section>
+      <article class="form-group">
+        <label >ID Categoría</label>
+        <input name="id" type="text" [(ngModel)]="nuevaCategoria.id" [ngModelOptions]={standalone:true}  class="form-control form-control-sm" id="FormControlId"/>
+      </article>
+      <article class="form-group">
+        <label for="FormControlDescripcion">Descripción</label>
+        <input name="descripcion" type="text" [(ngModel)]="nuevaCategoria.descripcion" [ngModelOptions]={standalone:true} class="form-control" id="FormControlDescripcion"/>
+      </article>
+    </section>
+    <button type="submit" class="btn btn-primary">Grabar</button>
+</form>

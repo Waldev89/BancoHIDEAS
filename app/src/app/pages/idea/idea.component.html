@@ -1,0 +1,79 @@
+<section id="menu" class="bg-primary p-4">
+    <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+      <a class="navbar-brand" href="#">
+        <img
+          src="assets/icons/home-outline.svg"
+          alt="Home"
+          style="width: 40px; background-color: rgb(195, 195, 199)"
+        />
+      </a>
+      <h5 class="text-white">Ideas...</h5>
+    </nav>
+  </section>
+  <form class="p-3" ngNativeValidate (ngSubmit)="valid_idea()">
+    <section>
+      <article class="form-group">
+        <label for="FormControlId">ID</label>
+        <input name="id" type="text" [(ngModel)]="Info.id" [ngModelOptions]={standalone:true} class="form-control form-control-sm" id="FormControlId"/>
+        <small *ngIf="InfoValidator.id" id="idHelp" class="form-text text-danger">Ingrese el ID</small>
+      </article>
+      <article class="form-group">
+        <label for="FormControlCategoria">Categoria</label>
+        <input name="categoria" type="text" [(ngModel)]="Info.categoria" [ngModelOptions]={standalone:true} class="form-control" id="FormControlCategoria"/>
+        <small *ngIf="InfoValidator.categoria" id="categoriaHelp" class="form-text text-danger">Ingrese  la Categoría</small>
+      </article>
+      <article class="form-group">
+        <label for="FormControlId_proy">ID Proyecto</label>
+        <input name="id_proy" type="text" [(ngModel)]="Info.id_proy" [ngModelOptions]={standalone:true} class="form-control" id="FormControlId_proy"/>
+        <small *ngIf="InfoValidator.id_proy" id="id_proyHelp" class="form-text text-danger">ID Proyecto</small>
+      </article>
+      <article class="form-group">
+        <label for="FormControlTit_idea">Titulo</label>
+        <input name="tit_idea" type="text" [(ngModel)]="Info.tit_idea" [ngModelOptions]={standalone:true} class="form-control" id="FormControlTit_idea"/>
+        <small *ngIf="InfoValidator.tit_idea" id="tit_ideaHelp" class="form-text text-danger">Titulo Idea</small>
+      </article>
+      <article class="form-group">
+        <label for="FormControlFecha_cre">Fecha creación</label>
+        <input name="fecha_cre" type="date" [(ngModel)]="Info.fecha_cre" [ngModelOptions]={standalone:true} class="form-control" id="FormControlFecha_cre" readonly/>
+        <small *ngIf="InfoValidator.fecha_cre" id="fecha_creHelp" class="form-text text-danger">Titulo Idea</small>
+      </article>
+      <article class="form-group">
+        <label for="FormControlDescripcion">Descripcion:</label>
+        <textarea name="descripcion" type="message" [(ngModel)]="Info.descripcion" [ngModelOptions]={standalone:true} class="form-control" id="FormControlDescripcion" rows="3"></textarea>
+        <small *ngIf="InfoValidator.descripcion" id="messageHelp" class="form-text text-danger">Ingrese la descripción</small>
+      </article>
+      <article class="form-group">
+        <label for="FormControlDescripcion">Estado:</label>
+        <select class="form-control">
+            <option>Estado</option>
+            <option>Estado 2</option>
+        </select>
+      </article>
+      <article class="form-group">
+        <label for="FormControlTecnologia">Tecnología</label>
+        <input name="tecnologia" type="text" [(ngModel)]="Info.tecnologia" [ngModelOptions]={standalone:true} class="form-control" id="FormControlTecnologia"/>
+        <small *ngIf="InfoValidator.tecnologia" id="tecnologiaHelp" class="form-text text-danger">Ingrese la(s) tecnología(s)</small>
+      </article>
+      <article class="form-group">
+        <label for="FormControlInversion">Inversión</label>
+        <input name="inversion" type="number" [(ngModel)]="Info.inversion" [ngModelOptions]={standalone:true} class="form-control" id="FormControlInversion"/>
+        <small *ngIf="InfoValidator.inversion" id="inversionHelp" class="form-text text-danger">Ingrese La inversión</small>
+      </article>
+      <article class="form-group">
+        <label for="FormControlResponsable">Responsable</label>
+        <input name="Responsable" type="text" [(ngModel)]="Info.responsable" [ngModelOptions]={standalone:true} class="form-control" id="FormControResponsable"/>
+        <small *ngIf="InfoValidator.responsable" id="responsableHelp" class="form-text text-danger">Ingrese el responsable</small>
+      </article>
+      <article class="form-group">
+        <label for="FormControlPropietario">Propietario</label>
+        <input name="Propietario" type="text" [(ngModel)]="Info.propietario" [ngModelOptions]={standalone:true} class="form-control" id="FormControPropietario"/>
+        <small *ngIf="InfoValidator.propietario" id="propietarioHelp" class="form-text text-danger">Ingrese el propietario</small>
+      </article>
+      <article class="form-group">
+        <label for="FormControlFecha_mod">Fecha/Hora modificación</label>
+        <input name="fecha_mod" type="datetime-local" [(ngModel)]="Info.fecha_mod" [ngModelOptions]={standalone:true} class="form-control" id="FormControFecha_mod"/>
+        <small *ngIf="InfoValidator.fecha_mod" id="fecha_modHelp" class="form-text text-danger">Ingrese la fecha/hora de modificación</small>
+      </article>
+    </section>
+    <button type="grabar" class="btn btn-primary">Grabar</button>
+</form>

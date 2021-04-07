@@ -1,0 +1,59 @@
+<section class="container my-4 position-relative">
+  <article class="row">
+    <section class="md-o-12">
+      <h2 class="mt-4 shadow p-3 mb-5 bg-white rounded">Banco de Hideas</h2>
+      <article>
+        <img
+          class="d-block mx-auto img-fluid history-img"
+          src="assets/images/HDG Logo.jpg"
+          alt="history image"
+          srcset=""
+        />
+        <small class="font-weight-light"
+          >Es un Sistema creado para incrementar los niveles de innovación
+          dentro de la compañía, muchos se preguntarán por que el nombre de
+          Hideas con “H”, se denominó así porque es un Sistema de ideas para
+          Heuristica. Allí se van a poder almacenar las ideas de los empleados,
+          las cuales solo van a ser visibles para el usuario que crea la idea y
+          el comité, la idea solo se puede borrar mientras está se encuentre en
+          estado borrador, una vez se le hagan los cambios iniciales
+          correctamente, se procede a consignar la idea para que el comité pueda
+          actuar sobre ella.</small
+        >
+      </article>
+      <h4 class="mt-4 shadow p-3 mb-5 bg-white rounded">Top de ideas</h4>
+      <div class="table-responsive-sm table-responsive-md table-responsive-lg">
+        <table class="table mb-5 table-striped table-bordered">
+          <thead class="tabla-encabezado">
+            <tr>
+              <th scope="col">Categoria</th>
+              <th scope="col">Titulo Idea</th>              
+              <th scope="col">Estado</th>
+              <th scope="col">Responsable</th>             
+            </tr>
+          </thead>
+    
+          <tbody *ngIf="hideas.length">
+            <tr *ngFor="let idea of hideas">
+              <th scope="row">{{ idea.categoria }}</th>
+              <th scope="row">{{ idea.titulo_idea }}</th>
+              <th scope="row">{{ idea.estado}}</th>
+              <th scope="row">{{ idea.responsable }}</th>              
+              <!-- <td>
+      
+                 <button type="button" class="btn btn-danger m-2" (click)="eliminar(idea)">Eliminar</button> 
+    
+              </td> -->
+            </tr>
+          </tbody>
+      
+          <tbody *ngIf="!hideas.length">
+            <tr>
+              <td colspan="5">No hay registros para mostrar</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </article>
+</section>
